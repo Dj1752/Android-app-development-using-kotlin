@@ -7,8 +7,6 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -17,8 +15,14 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         val linearLayoutbtn: Button = findViewById(R.id.Linearlayoutbt)
+        val RelativelLayoutbtn: Button = findViewById(R.id.Relativelayoutbt)
         linearLayoutbtn.setOnClickListener{
-         val intent = Intent(this,LinearLayout::class.java)
+         val intent = Intent(this,LinearLayouts::class.java)
+            startActivity(intent)
+            Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
+        }
+        RelativelLayoutbtn.setOnClickListener{
+         val intent = Intent(this,RelativelLayouts::class.java)
             startActivity(intent)
             Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
         }

@@ -16,5 +16,12 @@
         android:layout_marginVertical="10dp"
         android:text="LinearLayout"
         />
-
+    <Button
+        android:id="@+id/Relativelayoutbt"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="10dp"
+        android:text="RelativeLayout"
+        />
 </LinearLayout>

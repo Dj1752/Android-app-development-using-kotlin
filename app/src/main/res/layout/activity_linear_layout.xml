@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LinearLayout">
+    tools:context=".LinearLayouts">
     <!-- sub-view 1 :TextView -->
     <TextView
         android:id="@+id/txtVw"
