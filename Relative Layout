@@ -1,0 +1,173 @@
+RelativeLayout in Android is a ViewGroup subclass, that allows users to position child views relative to each other (e.g., view A to the right of view B) or relative to the parent (e.g., aligned to the top of the parent). Instead of using LinearLayout, we have to use RelativeLayout to design the user interface and keep our hierarchy flat because it improves the performance of the application. Unlike LinearLayout, which stacks the views in a particular direction, RelativeLayout allows more flexibility and dynamic UIs while maintaining a flat view hierarchy. This improves performance of the app.
+
+Important Attributes for Positioning Views in the RelativeLayout
+As we know, we need to define the position of child views or ViewGroups relative to each other element or relative to the parent. By default position is top-left, if someone forgets to specify the position of child views.
+
+XML attributes	                   Description
+layout_alignParentLeft	           Set “true” to match the left edge of view to the left edge of parent.
+layout_alignParentRight	           Set “true” to match the right edge of view to the right edge of the parent.
+layout_alignParentTop            	 Set to “true” to match the top edge of the view to the top edge of the parent.
+layout_alignParentBottom	         Set to “true” to match the bottom edge of the view to the bottom edge of the parent.
+layout_alignLeft	                 It accepts another sibling view ID and Align the view to the left of the specified view ID.
+layout_alignRight	                 It accepts another sibling view ID and Align the view to the right of the specified view ID.
+layout_alignStart	                 It accepts another sibling view ID and Align the view to the start of the specified view ID.
+layout_alignEnd	                   It accepts another sibling view ID and Align the view to the end of the specified view ID.
+layout_centerInParent	             When it is set to “true”, the view will be aligned to the center of parent.
+layout_centerHorizontal	           When it is set to “true”, the view will be horizontally centre-aligned within its parent.
+layout_centerVertical	             When it is set to “true”, the view will be vertically centre-aligned within its parent.
+layout_toLeftOf                  	 It accepts another sibling view ID and places the view left of the specified view ID.
+layout_toRightOf	                 It accepts another sibling view ID and places the view right of the specified view ID.
+layout_toStartOf                 	 It accepts another sibling view ID and places the view to start of the specified view ID.
+layout_toEndOf	                   It accepts another sibling view ID and places the view to end of the specified view ID.
+layout_above	                     It accepts another sibling view ID and places the view above the specified view ID.
+layout_below	                     It accepts another sibling view ID and places the view below the specified view ID.
+
+
+How to Declare RelativeLayout in XML file?
+Here’s an example of how to declare a RelativeLayout in an XML file:
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- sub-view 1 -->
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- sub-view 2 -->
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+
+
+Example of Application using Relative Layout
+Let’s create a application accepting first and last name of a person. Before moving to MainActivity.kt , we will first create a layout of application using Relative Layout.
+
+RelativeLayout in activity_main.xml file
+Following is a sample code for RelativeLayout in xml file which includes two TextView(s), two EditText(s) and a Button.
+
+activity_main.xml:
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center"
+    android:padding="32dp"
+    tools:context=".MainActivity">
+
+    <!--  subview - TextView  -->
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:padding="16dp"
+        android:text="First name:"
+        android:textSize="20sp" />
+
+    <!--  subview - EditText  -->
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_toEndOf="@id/textView1"
+        android:elegantTextHeight="true"
+        android:hint="Geeks"
+        android:padding="16dp" />
+
+    <!--  subview - TextView  -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_alignParentStart="true"
+        android:padding="16dp"
+        android:text="Last name:"
+        android:textSize="20sp" />
+
+    <!--  subview - EditText  -->
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toEndOf="@id/textView2"
+        android:elegantTextHeight="true"
+        android:hint="forGeeks"
+        android:padding="16dp" />
+
+    <!--  subview - Button  -->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textView2"
+        android:backgroundTint="@color/green"
+        android:text="Submit" />
+</RelativeLayout>
+
+
+MainActivity.kt file
+When the layout is created, you can access the UI elements from the activity_main.xml file by using the findViewById() method in the onCreate() call back function in the MainActivity.kt file.
+
+MainActivity.kt:
+
+package org.geeksforgeeks.demo
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+
+class MainActivity : AppCompatActivity() 
+{
+    // The child elements are initialized here
+    private lateinit var textView1: TextView
+    private lateinit var textView2: TextView
+    private lateinit var editText1: EditText
+    private lateinit var editText2: EditText
+    private lateinit var button: Button
+
+    override fun onCreate(savedInstanceState: Bundle?) 
+  	{
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // the child elements are accessed here from the xml layout
+        textView1 = findViewById(R.id.textView1)
+        textView2 = findViewById(R.id.textView2)
+        editText1 = findViewById(R.id.editText1)
+        editText2 = findViewById(R.id.editText2)
+        button = findViewById(R.id.button)
+
+        button.setOnClickListener {
+            /*
+             * add functionality for the button to
+             * save the user credentials in database
+             */
+        }
+    }
+}
