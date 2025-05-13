@@ -1,0 +1,130 @@
+Android Framelayout is a ViewGroup subclass that is used to specify the position of multiple
+views placed on top of each other to represent a single view screen. Generally, we can say FrameLayout simply blocks
+a particular area on the screen to display a single view. Here, all the child views or elements are added in stack format 
+means the most recently added child will be shown on the top of the screen. But, we can add multiple children’s views and control their positions only by using gravity attributes in FrameLayout.
+
+The FrameLayout can be defined using the code below:
+
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--sub view 1-->
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!--sub view 2-->
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!--sub view 3-->
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</FrameLayout>
+
+
+Step By Step Implementation
+Step 1: Create a New Project in Android Studio
+To create a new project in Android Studio please refer to How to Create/Start a New Project in Android Studio.
+
+The code for that has been given in both Java and Kotlin Programming Language for Android.
+
+
+Step 2: Working with the XML Files
+Next, go to the activity_main.xml file, which represents the UI of the project. Below is the code for the activity_main.xml file. Comments are added inside the code to understand the code in more detail. In this file, we declare the FrameLayout and start adding multiple views like textView, editText, Button, etc. All the views are placed on each other but we displace them according to our requirements. First, we add an image in the background and add other widgets on the top. On the screen, we can see the beautiful login page having an image in the background. 
+
+activity_main.xml:
+
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="32dp"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/green"
+        android:padding="16dp"
+        android:text="Login Details"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="156dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/grey"
+        android:textColorHint="@color/white"
+        android:hint="Enter your email"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="220dp"
+        android:background="@color/grey"
+        android:textColorHint="@color/white"
+        android:hint="Enter password"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:backgroundTint="@color/green"
+        android:layout_gravity="center_horizontal"
+        android:text="Submit" />
+
+</FrameLayout>
+
+
+
+Step 3: Working with the MainActivity File
+Go to the MainActivity File and refer to the following code. Below is the code for the MainActivity File. Comments are added inside the code to understand the code in more detail. When we have created the layout, we need to load the XML layout resource from our activity onCreate() callback method and access the UI element from the XML using findViewById().
+
+MainActivity:
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.EditText
+import android.widget.TextView
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var textView: TextView
+    private lateinit var editText1: EditText
+    private lateinit var editText2: EditText
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        // finding the UI elements
+
+        textView = findViewById(R.id.textView)
+        editText1 = findViewById(R.id.editText1);
+        editText2 = findViewById(R.id.editText2);
+    }
+}
