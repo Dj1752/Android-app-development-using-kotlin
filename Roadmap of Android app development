@@ -55,15 +55,18 @@ Frame
 Linear
 Relative
 Constraint
+
 View Elements:
 TextView
 EditText
 Buttons
 ImageView
+
 Intent:
 Implicit
 Explicit
 Intent Filter
+
 5) Complex UI Design
 
 Once you have a command on simple UI design then solely move to the complex UI design part such as:
