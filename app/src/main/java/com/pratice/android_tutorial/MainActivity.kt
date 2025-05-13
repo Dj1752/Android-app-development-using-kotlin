@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val linearLayoutbtn: Button = findViewById(R.id.Linearlayoutbt)
         val RelativelLayoutbtn: Button = findViewById(R.id.Relativelayoutbt)
+        val ConstraintLayout: Button = findViewById(R.id.constraintlayoutbt)
         linearLayoutbtn.setOnClickListener{
          val intent = Intent(this,LinearLayouts::class.java)
             startActivity(intent)
@@ -23,6 +24,11 @@ class MainActivity : AppCompatActivity() {
         }
         RelativelLayoutbtn.setOnClickListener{
          val intent = Intent(this,RelativelLayouts::class.java)
+            startActivity(intent)
+            Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
+        }
+        ConstraintLayout.setOnClickListener{
+         val intent = Intent(this,ConstraintLayout::class.java)
             startActivity(intent)
             Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
         }
