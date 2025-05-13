@@ -1,4 +1,6 @@
-ConstraintLayout is the most advanced layout in Android that lets you create complex and responsive UIs while minimizing nested views due to its flat view hierarchy. ConstraintLayout is similar to that of other View Groups which we have seen in Android such as RelativeLayout, LinearLayout, and many more. In this article, we will take a look at using ConstraintLayout in Android.
+ConstraintLayout is the most advanced layout in Android that lets you create complex and responsive UIs 
+while minimizing nested views due to its flat view hierarchy. ConstraintLayout is similar to that of other View Groups 
+which we have seen in Android such as RelativeLayout, LinearLayout, and many more. In this article, we will take a look at using ConstraintLayout in Android.
 
 Important Attributes of ConstraintLayout 
 Attributes                                   Description
