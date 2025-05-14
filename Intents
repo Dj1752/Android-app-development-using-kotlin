@@ -1,0 +1,236 @@
+What is intent in Android?
+The intent is a messaging object which passes between components like services, content providers, activities, etc. Normally startActivity() method is used for invoking any activity. Some of the general functions of intent are:
+
+Start service
+Launch Activity
+Display web page
+Display contact list
+Message broadcasting
+
+Methods and their Description
+Methods                	  Description
+Context.startActivity()	  This is to launch a new activity or get an existing activity to be action.
+Context.startService()	  This is to start a new service or deliver instructions for an existing service.
+Context.sendBroadcast()	  This is to deliver the message to broadcast receivers.
+
+
+Intent Classification:
+There are two types of intents in android
+Implicit Intent
+Explicit Intent
+
+
+Implicit Intent
+Using implicit Intent, components can’t be specified. An action to be performed is declared by implicit intent. Then android operating system will filter out components that will respond to the action. For Example,
+
+Implicit and Explicit Intents in Android
+In the above example, no component is specified, instead, an action is performed i.e. a webpage is going to be opened. As you type the name of your desired webpage and click on the 'CLICK' button. Your webpage is opened.
+
+Step by Step Implementation
+Creating an Android App to Open a Webpage Using Implicit Intent
+Step 1: Create a New Project in Android Studio
+To create a new project in Android Studio please refer to How to Create/Start a New Project in Android Studio . The code for that has been given in both Java and Kotlin Programming Language for Android. Create an XML file and Java File. Please refer to the pre-requisites to learn more about this step.
+
+Step 2: Working with the XML Files
+Next, go to the activity_main.xml file , which represents the UI of the project. Below is the code for the activity_main.xml file. Comments are added inside the code to understand the code in more detail.
+
+Syntax:
+android:id="@+id/id_name"
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn"
+        android:text="Search"
+        android:onClick="search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+Step 3: Working with the MainActivity File
+Now, we will create the Backend of the App. For this, Open the MainActivity file and instantiate the component (Button) created in the XML file using the findViewById() method. This method binds the created object to the UI Components with the help of the assigned ID.
+
+Syntax:
+ComponentType object = (ComponentType) findViewById(R.id.IdOfTheComponent);
+
+import android.content.Intent
+import android.net.Uri
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    lateinit var editText: EditText
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        editText = findViewById(R.id.editText)
+    }
+
+    fun search() {
+        val url = editText.text.toString()
+        val urlIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(urlIntent)
+    }
+}
+
+
+Explicit Intent
+Using explicit intent any other component can be specified. In other words, the targeted component is specified by explicit intent. So only the specified target component will be invoked. For Example:
+
+
+Explicit Intent Example
+In the above example, There are two activities (FirstActivity, and SecondActivity). When you click on the 'GO TO OTHER ACTIVITY' button in the first activity, then you move to the second activity. When you click on the 'GO TO HOME ACTIVITY' button in the second activity, then you move to the first activity. This is getting done through Explicit Intent.
+
+Step by Step Implementation
+How to create an Android App to move to the next activity using Explicit Intent(with Example)
+Step 1: Create a New Project in Android Studio
+To create a new project in Android Studio please refer to How to Create/Start a New Project in Android Studio . The code for that has been given in both Java and Kotlin Programming Language for Android. Please refer to the pre-requisites to learn more about this step.
+
+Step 2: Working with the activity_main.xml File
+Next, go to the activity_main.xml file , which represents the UI of the project. Below is the code for the activity_main.xml file. Comments are added inside the code to understand the code in more detail.
+
+Syntax:
+android:id="@+id/id_name"
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to GFG Home Screen"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:text="Go to News Screen"
+        android:onClick="newsScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+Step 3: Working with the MainActivity File
+Now, we will create the Backend of the App. For this, Open the MainActivity file and instantiate the component (Button, TextView) created in the XML file using the findViewById() method. This method binds the created object to the UI Components with the help of the assigned ID.
+
+Syntax:
+ComponentType object = (ComponentType) findViewById(R.id.IdOfTheComponent);
+Intent i = new Intent(getApplicationContext(), <className>);
+startActivity(i);
+
+import android.content.Intent
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+
+    fun newsScreen() {
+        val i = Intent(applicationContext, MainActivity2::class.java)
+        startActivity(i)
+    }
+}
+Step 4: Working with the activity_main2.xml File
+Now we have to create a second activity as a destination activity. The steps to create the second activity are File > new > Activity > Empty Activity.
+
+Creating New Activity in Android Studio
+Next, go to the activity_main2.xml file , which represents the UI of the project. Below is the code for the activity_main2.xml file. Comments are added inside the code to understand the code in more detail.
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <TextView
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to GFG News Screen"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:text="Go to Home Screen"
+        android:onClick="homeScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+Step 5: Working with the MainActivity2 File
+Now, we will create the Backend of the App. For this, Open the MainActivity file and instantiate the component (Button, TextView) created in the XML file using the findViewById() method. This method binds the created object to the UI Components with the help of the assigned ID.
+
+Syntax:
+ComponentType object = (ComponentType) findViewById(R.id.IdOfTheComponent);
+Intent i = new Intent(getApplicationContext(), <className>);
+startActivity(i);
+
+import android.content.Intent
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity2 : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main2)
+    }
+
+    fun homeScreen() {
+        val i = Intent(applicationContext, MainActivity::class.java)
+        startActivity(i)
+    }
+}
