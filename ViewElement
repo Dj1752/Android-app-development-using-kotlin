@@ -1,0 +1,65 @@
+A block of the screen which is responsible for the UI of the application is called a View. An android app UI consists of views and ViewGroups.
+View refers to android.view.View class of android, with the help of this class all the other GUI elements are drawn. 
+It is responsible for drawing and event handling in android applications. Below are some common views available in Android.
+
+TextView
+TextView refers to the widget which displays some text on the screen based on the layout, size, color, etc set for that particular TextView. 
+It optionally allows us to modify or edit itself as well.
+
+TextView in Android
+ 
+Below is the XML code for it.
+
+
+<!--  XML code of textView -->
+<TextView
+  android:id="@+id/text_view_id"
+  android:layout_height="wrap_content"
+  android:layout_width="wrap_content"
+  android:text="@string/hello" />
+
+ImageView
+ImageView class is used to display any kind of image resource in the android application either it can be android.graphics.Bitmap or android.graphics.drawable.Drawable
+(it is a general abstraction for anything that can be drawn in Android). 
+ImageView class or android.widget.ImageView inherits the android.view.View class which is the subclass of Kotlin. 
+AnyClass.Application of ImageView is also in applying tints to an image in order to reuse a drawable resource and create overlays on background images. Moreover, ImageView is also used to control the size and movement of an image.
+
+ImageView in Android
+ 
+Below is the XML code for it.
+
+
+<!--  XML code of ImageView -->
+<ImageView
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content"
+  android:src="@drawable/my_image"
+  android:contentDescription="@string/my_image_description"/>
+
+Button
+In Android applications, a Button is a user interface that is used to perform some action when clicked or tapped. It is a very common widget in Android and developers often use it. 
+
+Button in Android
+ 
+Below is the XML code for it.
+<!-- XML code for Button --> 
+<Button
+  android:id="@+id/button_id"
+  android:layout_height="wrap_content"
+  android:layout_width="wrap_content"
+  android:text="@string/self_destruct" />
+
+
+EditText
+EditText is one of the basic UI widgets, which is used to take input from the user. The EditText is derived or is the extension of the TextView in Android. 
+
+EditText in Android
+ 
+Below is the XML code for it.
+<!--  XML code of Edittext -->
+<EditText
+  android:id="@+id/plain_text_input"
+  android:layout_height="wrap_content"
+  android:layout_width="match_parent"
+  android:inputType="text"/>
+
