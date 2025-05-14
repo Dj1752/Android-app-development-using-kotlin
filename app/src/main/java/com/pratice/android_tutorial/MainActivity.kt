@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         val FrameLayouts: Button = findViewById(R.id.framelayoutbt)
         val viewElementlayoutbt: Button = findViewById(R.id.viewElementlayoutbt)
         val implicitbt: Button = findViewById(R.id.implicitbt)
+        val ListViewbt: Button = findViewById(R.id.ListViewbt)
+        val CustListViewbt: Button = findViewById(R.id.CustListViewbt)
 
 
         linearLayoutbtn.setOnClickListener{
@@ -48,6 +50,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
         }
+        ListViewbt.setOnClickListener{
+         val intent = Intent(this,ListViewfile::class.java)//Explicit Intent
+            startActivity(intent)
+            Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
+        }
+        CustListViewbt.setOnClickListener{
+         val intent = Intent(this,CustomListView::class.java)//Explicit Intent
+            startActivity(intent)
+            Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
+        }
 
         implicitbt.setOnClickListener{
             val url = "https://www.geeksforgeeks.org/implicit-and-explicit-intents-in-android-with-examples/"
@@ -55,6 +67,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
         }
+
 
     }
 
