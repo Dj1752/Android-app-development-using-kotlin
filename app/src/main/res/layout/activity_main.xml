@@ -40,4 +40,20 @@
         android:layout_marginVertical="10dp"
         android:text="FrameLayout"
         />
+    <Button
+        android:id="@+id/viewElementlayoutbt"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="10dp"
+        android:text="viewElement"
+        />
+    <Button
+        android:id="@+id/implicitbt"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="10dp"
+        android:text="Implicit"
+        />
 </LinearLayout>
