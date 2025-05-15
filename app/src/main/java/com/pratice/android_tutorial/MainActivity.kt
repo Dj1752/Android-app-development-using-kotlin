@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         val implicitbt: Button = findViewById(R.id.implicitbt)
         val ListViewbt: Button = findViewById(R.id.ListViewbt)
         val CustListViewbt: Button = findViewById(R.id.CustListViewbt)
+        val RecycleViewbt: Button = findViewById(R.id.RecycleViewbt)
 
 
         linearLayoutbtn.setOnClickListener{
@@ -57,6 +58,11 @@ class MainActivity : AppCompatActivity() {
         }
         CustListViewbt.setOnClickListener{
          val intent = Intent(this,CustomListView::class.java)//Explicit Intent
+            startActivity(intent)
+            Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
+        }
+        RecycleViewbt.setOnClickListener{
+         val intent = Intent(this,RecycleViewPage::class.java)//Explicit Intent
             startActivity(intent)
             Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
         }
