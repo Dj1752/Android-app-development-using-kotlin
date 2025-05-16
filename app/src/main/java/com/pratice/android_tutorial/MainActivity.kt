@@ -1,10 +1,16 @@
 package com.pratice.android_tutorial
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
+import android.provider.CalendarContract.Colors
+import android.view.Window
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         val CustListViewbt: Button = findViewById(R.id.CustListViewbt)
         val RecycleViewbt: Button = findViewById(R.id.RecycleViewbt)
         val Fragmentlayoutbt: Button = findViewById(R.id.Fragmentlayoutbt)
+        val Customdialogbt: Button = findViewById(R.id.Customdialogbt)
 
 
         linearLayoutbtn.setOnClickListener{
@@ -73,6 +80,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
         }
+        Customdialogbt.setOnClickListener {
+            val message= "Do you really want to logout ??"
+            showdialog(message)
+        }
 
         implicitbt.setOnClickListener{
             val url = "https://www.geeksforgeeks.org/implicit-and-explicit-intents-in-android-with-examples/"
@@ -81,6 +92,28 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
         }
 
+
+    }
+
+    private fun showdialog(message: String) {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.custom_dialog_box)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val tvMessage:TextView = dialog.findViewById(R.id.titletxt)
+        val yesbtn:TextView = dialog.findViewById(R.id.yesbtn)
+        val nobtn:TextView = dialog.findViewById(R.id.nobtn)
+
+        tvMessage.setText(message)
+        yesbtn.setOnClickListener{
+            Toast.makeText(this,"Clicked Yes",Toast.LENGTH_SHORT).show()
+        }
+        nobtn.setOnClickListener{
+            dialog.dismiss()
+        }
+        dialog.show()
 
     }
 

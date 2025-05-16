@@ -5,99 +5,108 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_margin="30dp"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
 
-    <Button
-        android:id="@+id/Linearlayoutbt"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="10dp"
+            <Button
+                android:id="@+id/Linearlayoutbt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="10dp"
 
-        android:text="LinearLayout"
-        />
-    <Button
-        android:id="@+id/Relativelayoutbt"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="10dp"
-        android:text="RelativeLayout"
-        />
-    <Button
-        android:id="@+id/constraintlayoutbt"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="10dp"
-        android:text="ConstraintLayout"
-        />
-    <Button
-        android:id="@+id/framelayoutbt"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="10dp"
-        android:text="FrameLayout"
-        />
-    <Button
-        android:id="@+id/viewElementlayoutbt"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="10dp"
-        android:text="viewElement"
-        />
-    <Button
-        android:id="@+id/implicitbt"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="10dp"
-        android:text="Implicit"
-        />
+                android:text="LinearLayout" />
+
             <Button
-        android:id="@+id/ListViewbt"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="10dp"
-        android:text="ListViewbt"
-        />
+                android:id="@+id/Relativelayoutbt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="10dp"
+                android:text="RelativeLayout" />
+
             <Button
-        android:id="@+id/CustListViewbt"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="10dp"
-        android:text="CustListViewbt"
-        />
+                android:id="@+id/constraintlayoutbt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="10dp"
+                android:text="ConstraintLayout" />
+
             <Button
-        android:id="@+id/RecycleViewbt"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="10dp"
-        android:text="RecycleViewbt"
-        />
+                android:id="@+id/framelayoutbt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="10dp"
+                android:text="FrameLayout" />
+
+            <Button
+                android:id="@+id/viewElementlayoutbt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="10dp"
+                android:text="viewElement" />
+
+            <Button
+                android:id="@+id/implicitbt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="10dp"
+                android:text="Implicit" />
+
+            <Button
+                android:id="@+id/ListViewbt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="10dp"
+                android:text="ListViewbt" />
+
+            <Button
+                android:id="@+id/CustListViewbt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="10dp"
+                android:text="CustListViewbt" />
+
+            <Button
+                android:id="@+id/RecycleViewbt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="10dp"
+                android:text="RecycleViewbt" />
+
             <Button
                 android:id="@+id/Fragmentlayoutbt"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginVertical="10dp"
-                android:text="Fragmentlayoutbt"
-                />
+                android:text="Fragmentlayoutbt" />
+
+            <Button
+                android:id="@+id/Customdialogbt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="10dp"
+                android:text="Custom_dialog_bt" />
         </LinearLayout>
     </ScrollView>
 
