@@ -90,6 +90,14 @@
         android:layout_marginVertical="10dp"
         android:text="RecycleViewbt"
         />
+            <Button
+                android:id="@+id/Fragmentlayoutbt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="10dp"
+                android:text="Fragmentlayoutbt"
+                />
         </LinearLayout>
     </ScrollView>
 

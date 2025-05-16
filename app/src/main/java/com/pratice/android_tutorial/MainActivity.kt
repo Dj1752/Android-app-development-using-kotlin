@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.pratice.android_tutorial.fragment.FragmentPage
 
 class MainActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId", "SuspiciousIndentation")
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         val ListViewbt: Button = findViewById(R.id.ListViewbt)
         val CustListViewbt: Button = findViewById(R.id.CustListViewbt)
         val RecycleViewbt: Button = findViewById(R.id.RecycleViewbt)
+        val Fragmentlayoutbt: Button = findViewById(R.id.Fragmentlayoutbt)
 
 
         linearLayoutbtn.setOnClickListener{
@@ -63,6 +65,11 @@ class MainActivity : AppCompatActivity() {
         }
         RecycleViewbt.setOnClickListener{
          val intent = Intent(this,RecycleViewPage::class.java)//Explicit Intent
+            startActivity(intent)
+            Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
+        }
+        Fragmentlayoutbt.setOnClickListener{
+         val intent = Intent(this,FragmentPage::class.java)//Explicit Intent
             startActivity(intent)
             Toast.makeText(this,"Clicked",Toast.LENGTH_SHORT).show()
         }
