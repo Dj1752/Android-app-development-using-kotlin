@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity() {
                 dialog.dismiss()
             }
             dialog.setCancelable(false)
+            dialog.setContentView(view)
             dialog.show()
         }
 
