@@ -14,6 +14,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.pratice.android_tutorial.fragment.FragmentPage
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         val RecycleViewbt: Button = findViewById(R.id.RecycleViewbt)
         val Fragmentlayoutbt: Button = findViewById(R.id.Fragmentlayoutbt)
         val Customdialogbt: Button = findViewById(R.id.Customdialogbt)
+        val BottomSheetdialogbt: Button = findViewById(R.id.BottomSheetdialogbt)
 
 
         linearLayoutbtn.setOnClickListener{
@@ -83,6 +85,17 @@ class MainActivity : AppCompatActivity() {
         Customdialogbt.setOnClickListener {
             val message= "Do you really want to logout ??"
             showdialog(message)
+        }
+
+        BottomSheetdialogbt.setOnClickListener {
+            val dialog = BottomSheetDialog(this)
+            val view  = layoutInflater.inflate(R.layout.bottom_sheet_dialog,null)
+            val btnclose =  view.findViewById<Button>(R.id.idBtnDismiss)
+            btnclose.setOnClickListener{
+                dialog.dismiss()
+            }
+            dialog.setCancelable(false)
+            dialog.show()
         }
 
         implicitbt.setOnClickListener{
