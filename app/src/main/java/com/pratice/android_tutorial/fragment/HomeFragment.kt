@@ -49,6 +49,7 @@ class HomeFragment : Fragment() {
         val Fragmentlayoutbt: Button = view.findViewById(R.id.Fragmentlayoutbt)
         val Customdialogbt: Button = view.findViewById(R.id.Customdialogbt)
         val BottomSheetdialogbt: Button = view.findViewById(R.id.BottomSheetdialogbt)
+        val TabLayoutbt: Button = view.findViewById(R.id.TabLayoutbt)
 
         linearLayoutbtn.setOnClickListener{
             val intent = Intent(activity, LinearLayouts::class.java)//Explicit Intent
@@ -115,6 +116,11 @@ class HomeFragment : Fragment() {
         implicitbt.setOnClickListener{
             val url = "https://www.geeksforgeeks.org/implicit-and-explicit-intents-in-android-with-examples/"
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))//Implicit Intent
+            startActivity(intent)
+            Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
+        }
+        TabLayoutbt.setOnClickListener{
+            val intent = Intent(activity,TabLayoutbt::class.java)//Explicit Intent
             startActivity(intent)
             Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
         }
