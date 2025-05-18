@@ -23,6 +23,7 @@ import com.pratice.android_tutorial.ListViewfile
 import com.pratice.android_tutorial.R
 import com.pratice.android_tutorial.RecycleViewPage
 import com.pratice.android_tutorial.RelativelLayouts
+import com.pratice.android_tutorial.TabLayouts
 import com.pratice.android_tutorial.ViewElements
 
 class HomeFragment : Fragment() {
@@ -120,7 +121,7 @@ class HomeFragment : Fragment() {
             Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
         }
         TabLayoutbt.setOnClickListener{
-            val intent = Intent(activity,TabLayoutbt::class.java)//Explicit Intent
+            val intent = Intent(activity, TabLayouts::class.java)//Explicit Intent
             startActivity(intent)
             Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
         }
