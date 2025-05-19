@@ -28,7 +28,7 @@ class SharePreference : AppCompatActivity() {
         val savedname = sharePreference.getString("user_name","")
         val savedage = sharePreference.getInt("user_age",0)
         nameEdit.setText(savedname)
-        ageEdit.setText(savedage)
+        ageEdit.setText(if (savedage > 0) savedage.toString() else "")
     }
 
     override fun onPause() {
