@@ -118,6 +118,13 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginVertical="10dp"
                 android:text="TabLayoutbt" />
+            <Button
+                android:id="@+id/SharePreferencebt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="10dp"
+                android:text="SharePreferencebt" />
         </LinearLayout>
     </ScrollView>
 

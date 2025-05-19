@@ -23,6 +23,7 @@ import com.pratice.android_tutorial.ListViewfile
 import com.pratice.android_tutorial.R
 import com.pratice.android_tutorial.RecycleViewPage
 import com.pratice.android_tutorial.RelativelLayouts
+import com.pratice.android_tutorial.SharePreference
 import com.pratice.android_tutorial.TabLayouts
 import com.pratice.android_tutorial.ViewElements
 
@@ -51,6 +52,7 @@ class HomeFragment : Fragment() {
         val Customdialogbt: Button = view.findViewById(R.id.Customdialogbt)
         val BottomSheetdialogbt: Button = view.findViewById(R.id.BottomSheetdialogbt)
         val TabLayoutbt: Button = view.findViewById(R.id.TabLayoutbt)
+        val SharePreferencebt: Button = view.findViewById(R.id.SharePreferencebt)
 
         linearLayoutbtn.setOnClickListener{
             val intent = Intent(activity, LinearLayouts::class.java)//Explicit Intent
@@ -122,6 +124,11 @@ class HomeFragment : Fragment() {
         }
         TabLayoutbt.setOnClickListener{
             val intent = Intent(activity, TabLayouts::class.java)//Explicit Intent
+            startActivity(intent)
+            Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
+        }
+        SharePreferencebt.setOnClickListener{
+            val intent = Intent(activity, SharePreference::class.java)//Explicit Intent
             startActivity(intent)
             Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
         }
