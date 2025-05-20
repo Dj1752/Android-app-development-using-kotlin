@@ -15,6 +15,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.pratice.android_tutorial.Animation
 import com.pratice.android_tutorial.ConstraintLayout
 import com.pratice.android_tutorial.CustomListView
 import com.pratice.android_tutorial.FrameLayout
@@ -53,6 +54,7 @@ class HomeFragment : Fragment() {
         val BottomSheetdialogbt: Button = view.findViewById(R.id.BottomSheetdialogbt)
         val TabLayoutbt: Button = view.findViewById(R.id.TabLayoutbt)
         val SharePreferencebt: Button = view.findViewById(R.id.SharePreferencebt)
+        val Animationbt: Button = view.findViewById(R.id.Animationbt)
 
         linearLayoutbtn.setOnClickListener{
             val intent = Intent(activity, LinearLayouts::class.java)//Explicit Intent
@@ -129,6 +131,11 @@ class HomeFragment : Fragment() {
         }
         SharePreferencebt.setOnClickListener{
             val intent = Intent(activity, SharePreference::class.java)//Explicit Intent
+            startActivity(intent)
+            Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
+        }
+        Animationbt.setOnClickListener{
+            val intent = Intent(activity, Animation::class.java)//Explicit Intent
             startActivity(intent)
             Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
         }

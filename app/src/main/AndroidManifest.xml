@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Android_Tutorial"
         tools:targetApi="31">
         <activity
+            android:name=".Animation"
+            android:exported="false" />
+        <activity
             android:name=".SharePreference"
             android:exported="false" />
         <activity
