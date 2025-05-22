@@ -55,4 +55,6 @@ dependencies {
     kapt ("androidx.room:room-compiler:2.2.3")
     implementation ("io.reactivex.rxjava2:rxjava:2.2.16")
     implementation ("io.reactivex.rxjava2:rxandroid:2.1.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
 }
