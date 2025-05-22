@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("kotlin-kapt")
-    id("kotlin-android-extensions")
+
 }
 
 android {
@@ -48,13 +48,23 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    // ViewModel and LiveData
-    implementation ("androidx.lifecycle:lifecycle-extensions:2.1.0")
-    kapt("androidx.lifecycle:lifecycle-common-java8:2.1.0")
-    implementation( "androidx.room:room-runtime:2.2.3")
-    kapt ("androidx.room:room-compiler:2.2.3")
-    implementation ("io.reactivex.rxjava2:rxjava:2.2.16")
-    implementation ("io.reactivex.rxjava2:rxandroid:2.1.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
+
+    // Lifecycle
+    implementation(libs.lifecycle.viewmodel)
+    implementation(libs.lifecycle.livedata)
+    kapt(libs.lifecycle.compiler)
+
+    // Room
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    kapt(libs.room.compiler)
+
+    // Coroutines
+    implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
+
+    // RxJava (if you still need it)
+    implementation(libs.rxjava)
+    implementation(libs.rxandroid)
+
 }
