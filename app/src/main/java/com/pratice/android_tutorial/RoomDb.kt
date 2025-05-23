@@ -21,9 +21,11 @@ class RoomDb : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_room_db)
-        database = Room.databaseBuilder(applicationContext,
-            ContactDatabase::class.java,
-            "contactDb").build()
+        database = ContactDatabase.getDataBase(this)
+
+//        database = Room.databaseBuilder(applicationContext,
+//            ContactDatabase::class.java,
+//            "contactDb").build()
 
         GlobalScope.launch {
             database.contactDao().insertContact(Contact(0,"Deepak","998876"))
