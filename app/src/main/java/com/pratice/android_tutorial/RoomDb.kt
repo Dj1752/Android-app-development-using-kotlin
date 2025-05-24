@@ -29,7 +29,7 @@ class RoomDb : AppCompatActivity() {
 //            "contactDb").build()
 
         GlobalScope.launch {
-            database.contactDao().insertContact(Contact(0,"Deepak","998876",Date()))
+            database.contactDao().insertContact(Contact(0,"Deepak","998876",Date(),1))
         }
 
     }
