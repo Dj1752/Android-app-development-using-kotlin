@@ -14,6 +14,7 @@ import com.pratice.android_tutorial.roomdb.Contact
 import com.pratice.android_tutorial.roomdb.ContactDatabase
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import java.util.Date
 
 class RoomDb : AppCompatActivity() {
     lateinit var database: ContactDatabase
@@ -28,7 +29,7 @@ class RoomDb : AppCompatActivity() {
 //            "contactDb").build()
 
         GlobalScope.launch {
-            database.contactDao().insertContact(Contact(0,"Deepak","998876"))
+            database.contactDao().insertContact(Contact(0,"Deepak","998876",Date()))
         }
 
     }
