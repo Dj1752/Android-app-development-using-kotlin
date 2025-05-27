@@ -28,6 +28,7 @@ import com.pratice.android_tutorial.RoomDb
 import com.pratice.android_tutorial.SharePreference
 import com.pratice.android_tutorial.TabLayouts
 import com.pratice.android_tutorial.ViewElements
+import com.pratice.android_tutorial.livedata.LiveDataPage
 import com.pratice.android_tutorial.mvvm.QuoteAppUsingMVVM
 
 class HomeFragment : Fragment() {
@@ -59,6 +60,7 @@ class HomeFragment : Fragment() {
         val Animationbt: Button = view.findViewById(R.id.Animationbt)
         val Roombt: Button = view.findViewById(R.id.Roombt)
         val MVVMbt: Button = view.findViewById(R.id.MVVMbt)
+        val liveDatabt: Button = view.findViewById(R.id.liveDatabt)
 
         linearLayoutbtn.setOnClickListener{
             val intent = Intent(activity, LinearLayouts::class.java)//Explicit Intent
@@ -150,6 +152,11 @@ class HomeFragment : Fragment() {
         }
         MVVMbt.setOnClickListener{
             val intent = Intent(activity, QuoteAppUsingMVVM::class.java)//Explicit Intent
+            startActivity(intent)
+            Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
+        }
+        liveDatabt.setOnClickListener{
+            val intent = Intent(activity, LiveDataPage::class.java)//Explicit Intent
             startActivity(intent)
             Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
         }
