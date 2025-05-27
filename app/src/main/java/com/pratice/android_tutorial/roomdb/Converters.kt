@@ -1,5 +1,5 @@
 package com.pratice.android_tutorial.roomdb
-
+/*
 import androidx.room.TypeConverter
 import androidx.room.TypeConverters
 import java.util.Date
@@ -18,3 +18,5 @@ class Converters {
         return Date(value)
     }
 }
+
+ */

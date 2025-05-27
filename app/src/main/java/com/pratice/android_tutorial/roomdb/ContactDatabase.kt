@@ -1,5 +1,5 @@
 package com.pratice.android_tutorial.roomdb
-
+/*
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
@@ -44,3 +44,5 @@ abstract class ContactDatabase: RoomDatabase() {
         }
     }
 }
+
+ */

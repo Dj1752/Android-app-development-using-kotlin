@@ -1,5 +1,5 @@
 package com.pratice.android_tutorial.roomdb
-
+/*
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
@@ -19,3 +19,5 @@ interface ContactDAO {
     fun getContact() :LiveData<List<Contact>>
 
 }
+
+ */

@@ -1,5 +1,5 @@
 package com.pratice.android_tutorial.roomdb
-
+/*
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.Date
@@ -14,3 +14,5 @@ data class Contact(
     val isActive : Int
 
 )
+
+ */

@@ -24,12 +24,12 @@ import com.pratice.android_tutorial.ListViewfile
 import com.pratice.android_tutorial.R
 import com.pratice.android_tutorial.RecycleViewPage
 import com.pratice.android_tutorial.RelativelLayouts
-import com.pratice.android_tutorial.RoomDb
+//import com.pratice.android_tutorial.RoomDb
 import com.pratice.android_tutorial.SharePreference
 import com.pratice.android_tutorial.TabLayouts
 import com.pratice.android_tutorial.ViewElements
 import com.pratice.android_tutorial.livedata.LiveDataPage
-import com.pratice.android_tutorial.mvvm.QuoteAppUsingMVVM
+//import com.pratice.android_tutorial.mvvm.QuoteAppUsingMVVM
 
 class HomeFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -145,16 +145,16 @@ class HomeFragment : Fragment() {
             startActivity(intent)
             Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
         }
-        Roombt.setOnClickListener{
-            val intent = Intent(activity, RoomDb::class.java)//Explicit Intent
-            startActivity(intent)
-            Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
-        }
-        MVVMbt.setOnClickListener{
-            val intent = Intent(activity, QuoteAppUsingMVVM::class.java)//Explicit Intent
-            startActivity(intent)
-            Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
-        }
+//        Roombt.setOnClickListener{
+//            val intent = Intent(activity, RoomDb::class.java)//Explicit Intent
+//            startActivity(intent)
+//            Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
+//        }
+//        MVVMbt.setOnClickListener{
+//            val intent = Intent(activity, QuoteAppUsingMVVM::class.java)//Explicit Intent
+//            startActivity(intent)
+//            Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
+//        }
         liveDatabt.setOnClickListener{
             val intent = Intent(activity, LiveDataPage::class.java)//Explicit Intent
             startActivity(intent)

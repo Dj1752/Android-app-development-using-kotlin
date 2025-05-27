@@ -1,5 +1,5 @@
 package com.pratice.android_tutorial
-
+/*
 import android.os.Bundle
 import android.provider.Settings.Global
 import android.util.Log
@@ -41,3 +41,5 @@ class RoomDb : AppCompatActivity() {
     }
 
 }
+
+ */
