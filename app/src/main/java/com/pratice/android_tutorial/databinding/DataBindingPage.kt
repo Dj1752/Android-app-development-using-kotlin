@@ -20,7 +20,7 @@ class DataBindingPage : AppCompatActivity() {
 //        binding.authortxt.text = "Reeta Gupta"
  //with data model
         val dataBindingModel = DataBindingModel("Win the Battle with your mind","Reeta Gupta",
-            "https://pixabay.com/photos/bird-blue-clouds-weather-pen-8788491/")
+            "https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/14235/production/_100058428_mediaitem100058424.jpg.webp")
         binding.dbm = dataBindingModel
      /// live data binding
 //        binding.databinding = dataModel
