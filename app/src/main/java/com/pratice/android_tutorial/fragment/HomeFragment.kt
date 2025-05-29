@@ -28,6 +28,7 @@ import com.pratice.android_tutorial.RelativelLayouts
 import com.pratice.android_tutorial.SharePreference
 import com.pratice.android_tutorial.TabLayouts
 import com.pratice.android_tutorial.ViewElements
+import com.pratice.android_tutorial.databinding.DataBindingPage
 import com.pratice.android_tutorial.livedata.LiveDataPage
 //import com.pratice.android_tutorial.mvvm.QuoteAppUsingMVVM
 
@@ -61,6 +62,7 @@ class HomeFragment : Fragment() {
         val Roombt: Button = view.findViewById(R.id.Roombt)
         val MVVMbt: Button = view.findViewById(R.id.MVVMbt)
         val liveDatabt: Button = view.findViewById(R.id.liveDatabt)
+        val Databindingbt: Button = view.findViewById(R.id.Databindingbt)
 
         linearLayoutbtn.setOnClickListener{
             val intent = Intent(activity, LinearLayouts::class.java)//Explicit Intent
@@ -157,6 +159,11 @@ class HomeFragment : Fragment() {
 //        }
         liveDatabt.setOnClickListener{
             val intent = Intent(activity, LiveDataPage::class.java)//Explicit Intent
+            startActivity(intent)
+            Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
+        }
+        Databindingbt.setOnClickListener{
+            val intent = Intent(activity, DataBindingPage::class.java)//Explicit Intent
             startActivity(intent)
             Toast.makeText(activity,"Clicked", Toast.LENGTH_SHORT).show()
         }
