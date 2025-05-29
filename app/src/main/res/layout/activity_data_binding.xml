@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!--    <data>-->
-    <!--     <variable-->
-    <!--         name="dbm"-->
-    <!--         type="com.pratice.android_tutorial.databinding.DataBindingModel" />-->
-    <!--    </data>-->
-    <data>
+        <data>
+         <variable
+             name="dbm"
+             type="com.pratice.android_tutorial.databinding.DataBindingModel" />
+        </data>
+<!--    <data>-->
 
-        <variable
-            name="databinding"
-            type="com.pratice.android_tutorial.databinding.DBindingLiveDataModel" />
-    </data>
+<!--        <variable-->
+<!--            name="databinding"-->
+<!--            type="com.pratice.android_tutorial.databinding.DBindingLiveDataModel" />-->
+<!--    </data>-->
 
     <LinearLayout
         android:id="@+id/main"
@@ -22,39 +22,45 @@
         android:gravity="center"
         android:orientation="vertical"
         tools:context=".databinding.DataBindingPage">
-         <EditText
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:text="@={databinding.databindingLive}"
-             android:textSize="16sp"
-             android:textColor="@color/black"
-             android:textStyle="bold"
-             android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            imagefromurl="@{dbm.url}"/>
+
+<!--         <EditText-->
+<!--             android:layout_width="match_parent"-->
+<!--             android:layout_height="wrap_content"-->
+<!--             android:text="@={databinding.databindingLive}"-->
+<!--             android:textSize="16sp"-->
+<!--             android:textColor="@color/black"-->
+<!--             android:textStyle="bold"-->
+<!--             android:layout_marginBottom="10dp"/>-->
         <TextView
             android:id="@+id/titletxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@{databinding.databindingLive}"
+            android:text="@{dbm.title}"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold" />
 
-        <!--        <TextView-->
-        <!--            android:id="@+id/authortxt"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:text="@{dbm.author}"-->
-        <!--            android:gravity="center"-->
-        <!--            android:textColor="@color/black"-->
-        <!--            android:textSize="20dp"-->
-        <!--            android:textStyle="bold" />-->
+                <TextView
+                    android:id="@+id/authortxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{dbm.author}"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="40dp"
-            android:onClick="@{()-> databinding.updateDataBinding()}"
-            android:text="click me" />
+<!--        <Button-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="40dp"-->
+<!--            android:onClick="@{()-> databinding.updateDataBinding()}"-->
+<!--            android:text="click me" />-->
     </LinearLayout>
 </layout>

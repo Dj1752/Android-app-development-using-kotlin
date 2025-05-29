@@ -14,14 +14,16 @@ class DataBindingPage : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this,R.layout.activity_data_binding)
         dataModel = ViewModelProvider(this).get(DBindingLiveDataModel::class.java)
 
+
     //with hardcoded data
 //        binding.titletxt.text = "Win the Battle with your mind"
 //        binding.authortxt.text = "Reeta Gupta"
-// with data model
-//        val dataBindingModel = DataBindingModel("Win the Battle with your mind","Reeta Gupta")
-//        binding.dbm = dataBindingModel
+ //with data model
+        val dataBindingModel = DataBindingModel("Win the Battle with your mind","Reeta Gupta",
+            "https://pixabay.com/photos/bird-blue-clouds-weather-pen-8788491/")
+        binding.dbm = dataBindingModel
      /// live data binding
-        binding.databinding = dataModel
-        binding.lifecycleOwner=this
+//        binding.databinding = dataModel
+//        binding.lifecycleOwner=this
     }
 }
