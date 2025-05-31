@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,17 +15,19 @@
         android:theme="@style/Theme.Android_Tutorial"
         tools:targetApi="31">
         <activity
+            android:name=".retrofitapi.RetrofitPage"
+            android:exported="false" />
+        <activity
             android:name=".databinding.DataBindingPage"
             android:exported="false" />
         <activity
             android:name=".livedata.LiveDataPage"
-            android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".mvvm.QuoteAppUsingMVVM"-->
-<!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name=".RoomDb"-->
-<!--            android:exported="false" />-->
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".mvvm.QuoteAppUsingMVVM" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".RoomDb" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".Animation"
             android:exported="false" />
