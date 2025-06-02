@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Android_Tutorial"
         tools:targetApi="31">
         <activity
+            android:name=".Recycleview_Page"
+            android:exported="false" />
+        <activity
             android:name=".retrofitapi.RetrofitPage"
             android:exported="false" />
         <activity
